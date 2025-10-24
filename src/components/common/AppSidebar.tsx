@@ -15,6 +15,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { channels } from '@/lib/data';
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
+import { useSubscriptions } from '@/hooks/use-subscriptions';
 
 const mainNav = [
   { href: '/', icon: Home, label: 'Home' },
@@ -30,7 +31,10 @@ const libraryNav = [
 
 export default function AppSidebar() {
   const pathname = usePathname();
-  const subscribedChannels = channels.slice(0, 4);
+  const { subscriptions } = useSubscriptions();
+
+  const subscribedChannels = channels.filter(channel => subscriptions.includes(channel.id));
+
 
   return (
     <>
@@ -85,19 +89,25 @@ export default function AppSidebar() {
           <SidebarMenuItem className="px-2 text-sm font-semibold text-muted-foreground">
             Subscriptions
           </SidebarMenuItem>
-          {subscribedChannels.map((channel) => (
-            <SidebarMenuItem key={channel.id}>
-              <Link href={`/channel/${channel.id}`} className='w-full'>
-                <SidebarMenuButton className="justify-start h-10" tooltip={channel.name}>
-                  <Avatar className="h-6 w-6">
-                    <AvatarImage src={channel.avatarUrl} />
-                    <AvatarFallback>{channel.name.charAt(0)}</AvatarFallback>
-                  </Avatar>
-                  <span>{channel.name}</span>
-                </SidebarMenuButton>
-              </Link>
+          {subscribedChannels.length > 0 ? (
+            subscribedChannels.map((channel) => (
+              <SidebarMenuItem key={channel.id}>
+                <Link href={`/channel/${channel.id}`} className='w-full'>
+                  <SidebarMenuButton className="justify-start h-10" tooltip={channel.name}>
+                    <Avatar className="h-6 w-6">
+                      <AvatarImage src={channel.avatarUrl} />
+                      <AvatarFallback>{channel.name.charAt(0)}</AvatarFallback>
+                    </Avatar>
+                    <span>{channel.name}</span>
+                  </SidebarMenuButton>
+                </Link>
+              </SidebarMenuItem>
+            ))
+          ) : (
+            <SidebarMenuItem className="px-4 text-xs text-muted-foreground">
+              No subscriptions yet.
             </SidebarMenuItem>
-          ))}
+          )}
         </SidebarMenu>
       </SidebarContent>
     </>

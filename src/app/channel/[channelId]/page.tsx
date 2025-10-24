@@ -1,3 +1,5 @@
+'use client';
+
 import { notFound } from 'next/navigation';
 import { videos, channels } from '@/lib/data';
 import Image from 'next/image';
@@ -7,13 +9,17 @@ import { Bell, PlaySquare } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import VideoCard from '@/components/videos/VideoCard';
 import { formatSubscribers } from '@/lib/formatters';
+import { useSubscriptions } from '@/hooks/use-subscriptions';
 
 export default function ChannelPage({ params }: { params: { channelId: string } }) {
   const channel = channels.find((c) => c.id === params.channelId);
+  const { subscriptions, toggleSubscription } = useSubscriptions();
+
   if (!channel) {
     notFound();
   }
 
+  const isSubscribed = subscriptions.includes(channel.id);
   const channelVideos = videos.filter((v) => v.channelId === channel.id);
 
   return (
@@ -38,9 +44,9 @@ export default function ChannelPage({ params }: { params: { channelId: string } 
                 <p className="text-muted-foreground">@{channel.name.toLowerCase()}</p>
                 <p className="text-muted-foreground">{formatSubscribers(channel.subscribers)} subscribers &bull; {channelVideos.length} videos</p>
             </div>
-            <Button size="lg" className="rounded-full">
+            <Button size="lg" className="rounded-full" onClick={() => toggleSubscription(channel.id)} variant={isSubscribed ? 'secondary' : 'default'}>
                 <Bell className="mr-2 h-5 w-5" />
-                Subscribe
+                {isSubscribed ? 'Subscribed' : 'Subscribe'}
             </Button>
         </div>
 

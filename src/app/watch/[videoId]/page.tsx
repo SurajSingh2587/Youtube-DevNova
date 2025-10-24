@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import { videos, channels, comments } from '@/lib/data';
 import VideoPlayer from '@/components/videos/VideoPlayer';
@@ -15,22 +15,53 @@ import VideoCard from '@/components/videos/VideoCard';
 import { useWatchHistory } from '@/hooks/use-watch-history';
 import { Separator } from '@/components/ui/separator';
 import { Skeleton } from '@/components/ui/skeleton';
+import { useSubscriptions } from '@/hooks/use-subscriptions';
+import { useLikes } from '@/hooks/use-likes';
 
 export default function WatchPage() {
   const params = useParams();
   const videoId = params.videoId as string;
   const { addToHistory } = useWatchHistory();
+  const { subscriptions, toggleSubscription } = useSubscriptions();
+  const { likedVideos, dislikedVideos, toggleLike, toggleDislike } = useLikes();
+  
+  const [video, setVideo] = useState(videos.find((v) => v.id === videoId));
 
   useEffect(() => {
     if (videoId) {
       addToHistory(videoId);
+      setVideo(videos.find((v) => v.id === videoId))
     }
   }, [videoId, addToHistory]);
 
-  const video = videos.find((v) => v.id === videoId);
   const channel = channels.find((c) => c.id === video?.channelId);
   const videoComments = comments.filter((c) => c.videoId === videoId);
   const upNextVideos = videos.filter((v) => v.id !== videoId).slice(0, 10);
+
+  const isSubscribed = channel ? subscriptions.includes(channel.id) : false;
+  const isLiked = likedVideos.includes(videoId);
+  const isDisliked = dislikedVideos.includes(videoId);
+  
+  const handleLike = () => {
+    toggleLike(videoId);
+    if (!video) return;
+    if (isLiked) {
+      setVideo({...video, likes: video.likes - 1})
+    } else {
+       setVideo({...video, likes: video.likes + 1, dislikes: isDisliked ? video.dislikes -1 : video.dislikes})
+    }
+  }
+  
+  const handleDislike = () => {
+    toggleDislike(videoId);
+    if (!video) return;
+    if (isDisliked) {
+      setVideo({...video, dislikes: video.dislikes - 1})
+    } else {
+      setVideo({...video, dislikes: video.dislikes + 1, likes: isLiked ? video.likes -1 : video.likes})
+    }
+  }
+
 
   if (!video || !channel) {
     return (
@@ -79,18 +110,18 @@ export default function WatchPage() {
                 <Link href={`/channel/${channel.id}`} className="font-semibold">{channel.name}</Link>
                 <p className="text-sm text-muted-foreground">{formatSubscribers(channel.subscribers)} subscribers</p>
               </div>
-              <Button variant="outline" className="ml-4 rounded-full">
-                <Bell className="mr-2 h-4 w-4" /> Subscribed
+              <Button variant={isSubscribed ? 'secondary' : 'default'} className="ml-4 rounded-full" onClick={() => toggleSubscription(channel.id)}>
+                <Bell className="mr-2 h-4 w-4" /> {isSubscribed ? 'Subscribed' : 'Subscribe' }
               </Button>
             </div>
             <div className="flex items-center gap-2 md:ml-auto">
               <div className="flex items-center rounded-full bg-secondary">
-                <Button variant="ghost" className="rounded-r-none rounded-l-full">
-                  <ThumbsUp className="mr-2 h-5 w-5" /> {formatViews(video.likes)}
+                <Button variant="ghost" className="rounded-r-none rounded-l-full" onClick={handleLike}>
+                  <ThumbsUp className={`mr-2 h-5 w-5 ${isLiked ? 'fill-primary' : ''}`} /> {formatViews(video.likes)}
                 </Button>
                 <Separator orientation="vertical" className="h-6"/>
-                <Button variant="ghost" className="rounded-l-none rounded-r-full">
-                  <ThumbsDown className="h-5 w-5" />
+                <Button variant="ghost" className="rounded-l-none rounded-r-full" onClick={handleDislike}>
+                  <ThumbsDown className={`h-5 w-5 ${isDisliked ? 'fill-primary' : ''}`} />
                 </Button>
               </div>
               <Button variant="secondary" className="rounded-full">
