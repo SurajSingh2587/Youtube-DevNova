@@ -1,3 +1,196 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "thumb-01",
+      "description": "A stunning mountain landscape at sunrise",
+      "imageUrl": "https://images.unsplash.com/photo-1506880648420-aafaa650d147?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtb3VudGFpbiUyMHN1bnJpc2V8ZW58MHx8fHwxNzYxMzE5NzI2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "mountain sunrise"
+    },
+    {
+      "id": "thumb-02",
+      "description": "Close-up of a delicious-looking pizza",
+      "imageUrl": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxmb29kJTIwcGl6emF8ZW58MHx8fHwxNzYxMjgyMzUzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "food pizza"
+    },
+    {
+      "id": "thumb-03",
+      "description": "A person coding on a laptop in a modern office",
+      "imageUrl": "https://images.unsplash.com/photo-1667984436026-99b165e3672b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjb2RpbmclMjBwcm9ncmFtbWluZ3xlbnwwfHx8fDE3NjEyOTE0NjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "coding programming"
+    },
+    {
+      "id": "thumb-04",
+      "description": "A cute puppy playing in a field of grass",
+      "imageUrl": "https://images.unsplash.com/photo-1601979031925-424e53b6caaa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwdXBweSUyMGRvZ3xlbnwwfHx8fDE3NjEyODMyODN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "puppy dog"
+    },
+    {
+      "id": "thumb-05",
+      "description": "Someone playing an acoustic guitar",
+      "imageUrl": "https://images.unsplash.com/photo-1690149064322-cce27ec0ccd8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxndWl0YXIlMjBtdXNpY3xlbnwwfHx8fDE3NjEzMjM2Nzl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "guitar music"
+    },
+    {
+      "id": "thumb-06",
+      "description": "A time-lapse of a bustling city at night",
+      "imageUrl": "https://images.unsplash.com/photo-1708474660686-7a00a0ffe4ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjaXR5JTIwbmlnaHR8ZW58MHx8fHwxNzYxMjU5MDc1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "city night"
+    },
+    {
+      "id": "thumb-07",
+      "description": "A person painting on a canvas",
+      "imageUrl": "https://images.unsplash.com/photo-1579783901586-d88db74b4fe4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxhcnQlMjBwYWludGluZ3xlbnwwfHx8fDE3NjEyNjUxMTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "art painting"
+    },
+    {
+      "id": "thumb-08",
+      "description": "A person working out in a gym",
+      "imageUrl": "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxmaXRuZXNzJTIwZ3ltfGVufDB8fHx8MTc2MTMyNDAzOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "fitness gym"
+    },
+    {
+      "id": "thumb-09",
+      "description": "A drone shot of a beautiful beach",
+      "imageUrl": "https://images.unsplash.com/photo-1577172249844-716749254893?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxiZWFjaCUyMG9jZWFufGVufDB8fHx8MTc2MTIyOTUwMXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "beach ocean"
+    },
+    {
+      "id": "thumb-10",
+      "description": "Someone preparing a cup of coffee",
+      "imageUrl": "https://images.unsplash.com/photo-1515375295342-ead4ef91028f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjb2ZmZWUlMjBjYWZlfGVufDB8fHx8MTc2MTI5NjI2MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "coffee cafe"
+    },
+    {
+      "id": "thumb-11",
+      "description": "A person reading a book in a cozy chair",
+      "imageUrl": "https://images.unsplash.com/photo-1630343710506-89f8b9f21d31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxyZWFkaW5nJTIwYm9va3xlbnwwfHx8fDE3NjEyMjkzMTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "reading book"
+    },
+    {
+      "id": "thumb-12",
+      "description": "A cat sleeping in a sunbeam",
+      "imageUrl": "https://images.unsplash.com/photo-1665199020973-5cbe8f6cb617?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjYXQlMjBzbGVlcGluZ3xlbnwwfHx8fDE3NjEyMjU4MDZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cat sleeping"
+    },
+    {
+      "id": "thumb-13",
+      "description": "A futuristic cityscape with flying cars",
+      "imageUrl": "https://images.unsplash.com/photo-1536768139911-e290a59011e4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZnV0dXJpc3RpYyUyMGNpdHl8ZW58MHx8fHwxNzYxMjQ1OTQxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "futuristic city"
+    },
+    {
+      "id": "thumb-14",
+      "description": "A chef cooking in a professional kitchen",
+      "imageUrl": "https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjaGVmJTIwY29va2luZ3xlbnwwfHx8fDE3NjEyODEzMTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "chef cooking"
+    },
+    {
+      "id": "thumb-15",
+      "description": "Hikers on top of a mountain peak",
+      "imageUrl": "https://images.unsplash.com/photo-1542359649-31e03cd4d909?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxoaWtpbmclMjBtb3VudGFpbnxlbnwwfHx8fDE3NjEyOTAyNjB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "hiking mountain"
+    },
+    {
+      "id": "thumb-16",
+      "description": "A vibrant street market in a foreign country",
+      "imageUrl": "https://images.unsplash.com/photo-1556360853-b581cf3c8eb2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzdHJlZXQlMjBtYXJrZXR8ZW58MHx8fHwxNzYxMzA1Njc0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "street market"
+    },
+    {
+      "id": "avatar-01",
+      "description": "Profile picture for CodeWizard",
+      "imageUrl": "https://images.unsplash.com/photo-1590086782792-42dd2350140d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwZXJzb24lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjEyMjc5NjN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person portrait"
+    },
+    {
+      "id": "avatar-02",
+      "description": "Profile picture for FoodieFusion",
+      "imageUrl": "https://images.unsplash.com/photo-1623605931891-d5b95ee98459?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwZXJzb24lMjBzbWlsaW5nfGVufDB8fHx8MTc2MTI5NTU5OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person smiling"
+    },
+    {
+      "id": "avatar-03",
+      "description": "Profile picture for PetPals",
+      "imageUrl": "https://images.unsplash.com/photo-1542353436-312f0e1f67ff?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwZXJzb24lMjBoYXBweXxlbnwwfHx8fDE3NjEzMDE4MzV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person happy"
+    },
+    {
+      "id": "avatar-04",
+      "description": "Profile picture for MusicMinds",
+      "imageUrl": "https://images.unsplash.com/photo-1752458978058-c6cde987930d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwZXJzb24lMjBzZXJpb3VzfGVufDB8fHx8MTc2MTMyMjM5Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person serious"
+    },
+    {
+      "id": "avatar-05",
+      "description": "Profile picture for TravelVibes",
+      "imageUrl": "https://images.unsplash.com/photo-1439433547555-1f4f96513499?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxwZXJzb24lMjBvdXRkb29yc3xlbnwwfHx8fDE3NjEzMTQ3Nzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person outdoors"
+    },
+    {
+      "id": "avatar-06",
+      "description": "Profile picture for ArtExplorers",
+      "imageUrl": "https://images.unsplash.com/photo-1594201515980-7d8ef791161b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwZXJzb24lMjBjcmVhdGl2ZXxlbnwwfHx8fDE3NjEyNzcwMTl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person creative"
+    },
+    {
+      "id": "avatar-07",
+      "description": "Profile picture for a user",
+      "imageUrl": "https://images.unsplash.com/photo-1557053908-4793c484d06f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc2MTI1ODc2Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman portrait"
+    },
+    {
+      "id": "avatar-08",
+      "description": "Profile picture for a user",
+      "imageUrl": "https://images.unsplash.com/photo-1522556189639-b150ed9c4330?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjEyNTU5NTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man portrait"
+    },
+    {
+      "id": "avatar-09",
+      "description": "Profile picture for a user",
+      "imageUrl": "https://images.unsplash.com/photo-1623691079567-f5a272e9ab75?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxwZXJzb24lMjBnbGFzc2VzfGVufDB8fHx8MTc2MTI3ODE3M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person glasses"
+    },
+    {
+      "id": "avatar-10",
+      "description": "Profile picture for a user",
+      "imageUrl": "https://images.unsplash.com/photo-1624486217002-846e654ac969?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cGVyc29uJTIwc21pbGluZ3xlbnwwfHx8fDE3NjEyOTU1OTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person smiling"
+    },
+    {
+      "id": "channel-banner-01",
+      "description": "Channel banner for CodeWizard",
+      "imageUrl": "https://images.unsplash.com/photo-1610466896927-699424f3c86d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxhYnN0cmFjdCUyMGNvZGV8ZW58MHx8fHwxNzYxMzIxMjQxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "abstract code"
+    },
+    {
+      "id": "channel-banner-02",
+      "description": "Channel banner for FoodieFusion",
+      "imageUrl": "https://images.unsplash.com/photo-1605655293594-92e21b3409bf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxmb29kJTIwY29sbGFnZXxlbnwwfHx8fDE3NjEzMjQwMzh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "food collage"
+    },
+    {
+      "id": "channel-banner-03",
+      "description": "Channel banner for PetPals",
+      "imageUrl": "https://images.unsplash.com/photo-1425082661705-1834bfd09dca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjdXRlJTIwYW5pbWFsc3xlbnwwfHx8fDE3NjEyODU0OTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cute animals"
+    },
+    {
+      "id": "channel-banner-04",
+      "description": "Channel banner for MusicMinds",
+      "imageUrl": "https://images.unsplash.com/photo-1714252562781-e13836d95d80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxtdXNpYyUyMG5vdGVzfGVufDB8fHx8MTc2MTIzMDE2OXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "music notes"
+    },
+    {
+      "id": "channel-banner-05",
+      "description": "Channel banner for TravelVibes",
+      "imageUrl": "https://images.unsplash.com/photo-1723306743407-cb6ac8f19941?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx3b3JsZCUyMG1hcHxlbnwwfHx8fDE3NjEyMjg0MDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "world map"
+    },
+    {
+      "id": "channel-banner-06",
+      "description": "Channel banner for ArtExplorers",
+      "imageUrl": "https://images.unsplash.com/photo-1544277811-ce00cbaa4642?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwYWludCUyMHNwbGFzaHxlbnwwfHx8fDE3NjEzMjQwMzh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "paint splash"
+    }
+  ]
 }
