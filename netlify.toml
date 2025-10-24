@@ -1,13 +1,9 @@
-# Netlify build configuration for a Next.js app
+
 [build]
   command = "npm run build"
   publish = ".next"
 
 [build.environment]
-  # This makes sure Netlify uses the same Node.js version as your local environment if specified.
-  # Check your project's package.json for the "engines" field.
-  # NODE_VERSION = "20" 
-
 [dev]
   command = "npm run dev"
   port = 3000
