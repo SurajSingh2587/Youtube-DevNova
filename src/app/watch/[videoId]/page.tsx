@@ -10,6 +10,7 @@ import { Button } from '@/components/ui/button';
 import { ThumbsUp, ThumbsDown, Share2, Bell } from 'lucide-react';
 import { formatSubscribers, formatViews } from '@/lib/formatters';
 import Link from 'next/link';
+import Image from 'next/image';
 import VideoCard from '@/components/videos/VideoCard';
 import { useWatchHistory } from '@/hooks/use-watch-history';
 import { Separator } from '@/components/ui/separator';
