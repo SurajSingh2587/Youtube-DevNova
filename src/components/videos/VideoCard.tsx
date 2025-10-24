@@ -17,8 +17,9 @@ export default function VideoCard({ video }: VideoCardProps) {
 
   if (!channel) return null;
 
-  const handleChannelClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleChannelClick = (e: React.MouseEvent) => {
     e.stopPropagation();
+    e.preventDefault();
     router.push(`/channel/${channel.id}`);
   };
 
@@ -35,12 +36,12 @@ export default function VideoCard({ video }: VideoCardProps) {
           />
         </div>
         <div className="flex items-start gap-3">
-          <a onClick={handleChannelClick} className="flex-shrink-0 z-10">
+          <div onClick={handleChannelClick} className="flex-shrink-0 z-10 cursor-pointer">
             <Avatar>
               <AvatarImage src={channel.avatarUrl} alt={channel.name} />
               <AvatarFallback>{channel.name.charAt(0)}</AvatarFallback>
             </Avatar>
-          </a>
+          </div>
           <div className="flex flex-col">
             <h3 className="line-clamp-2 text-base font-semibold leading-tight group-hover:text-primary">
               {video.title}
