@@ -5,15 +5,22 @@ import Link from 'next/link';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { formatDistanceToNowStrict } from 'date-fns';
 import { formatViews } from '@/lib/formatters';
+import { useRouter } from 'next/navigation';
 
 type VideoCardProps = {
   video: Video;
 };
 
 export default function VideoCard({ video }: VideoCardProps) {
+  const router = useRouter();
   const channel = channels.find((c) => c.id === video.channelId);
 
   if (!channel) return null;
+
+  const handleChannelClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.stopPropagation();
+    router.push(`/channel/${channel.id}`);
+  };
 
   return (
     <Link href={`/watch/${video.id}`} className="group">
@@ -28,12 +35,12 @@ export default function VideoCard({ video }: VideoCardProps) {
           />
         </div>
         <div className="flex items-start gap-3">
-          <Link href={`/channel/${channel.id}`} className="flex-shrink-0">
+          <a onClick={handleChannelClick} className="flex-shrink-0 z-10">
             <Avatar>
               <AvatarImage src={channel.avatarUrl} alt={channel.name} />
               <AvatarFallback>{channel.name.charAt(0)}</AvatarFallback>
             </Avatar>
-          </Link>
+          </a>
           <div className="flex flex-col">
             <h3 className="line-clamp-2 text-base font-semibold leading-tight group-hover:text-primary">
               {video.title}
