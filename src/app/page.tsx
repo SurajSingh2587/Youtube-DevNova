@@ -2,49 +2,39 @@
 
 import { useEffect, useState } from 'react';
 import VideoCard from '@/components/videos/VideoCard';
-import { useWatchHistory } from '@/hooks/use-watch-history';
-import { getVideoRecommendations } from '@/ai/flows/video-recommendations';
 import { videos, type Video } from '@/lib/data';
 import { Skeleton } from '@/components/ui/skeleton';
 
+// Function to shuffle an array
+const shuffleArray = (array: any[]) => {
+  let currentIndex = array.length,
+    randomIndex;
+
+  // While there remain elements to shuffle.
+  while (currentIndex !== 0) {
+    // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex],
+      array[currentIndex],
+    ];
+  }
+
+  return array;
+};
+
 export default function Home() {
-  const [recommendedVideos, setRecommendedVideos] = useState<Video[]>([]);
+  const [shuffledVideos, setShuffledVideos] = useState<Video[]>([]);
   const [loading, setLoading] = useState(true);
-  const { watchHistory } = useWatchHistory();
 
   useEffect(() => {
-    const fetchRecommendations = async () => {
-      setLoading(true);
-      try {
-        // Use a default or recent history for initial recommendations
-        const historyToUse = watchHistory.length > 0 ? watchHistory : ['vid-01', 'vid-02'];
-        const result = await getVideoRecommendations({
-          watchHistory: historyToUse,
-          numberOfRecommendations: 12,
-        });
-        
-        const recommendedIds = new Set(result.recommendations);
-        const filteredVideos = videos.filter((video) => recommendedIds.has(video.id));
-        
-        // If AI gives fewer than requested, fill with other videos
-        if (filteredVideos.length < 12) {
-          const additionalVideos = videos.filter(v => !recommendedIds.has(v.id)).slice(0, 12 - filteredVideos.length);
-          setRecommendedVideos([...filteredVideos, ...additionalVideos]);
-        } else {
-          setRecommendedVideos(filteredVideos);
-        }
-
-      } catch (error) {
-        console.error('Failed to get video recommendations:', error);
-        // Fallback to showing a generic list of videos
-        setRecommendedVideos(videos.slice(0, 12));
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchRecommendations();
-  }, [watchHistory]);
+    // We shuffle the videos on the client to ensure randomness on each load
+    setShuffledVideos(shuffleArray([...videos]));
+    setLoading(false);
+  }, []);
 
   return (
     <main className="flex-1 overflow-y-auto p-4 md:p-6 lg:p-8">
@@ -63,7 +53,7 @@ export default function Home() {
                 </div>
               </div>
             ))
-          : recommendedVideos.map((video) => (
+          : shuffledVideos.map((video) => (
               <VideoCard key={video.id} video={video} />
             ))}
       </div>
