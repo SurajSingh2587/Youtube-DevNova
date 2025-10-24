@@ -4,6 +4,7 @@ import { SidebarProvider, Sidebar, SidebarInset } from '@/components/ui/sidebar'
 import AppHeader from '@/components/common/Header';
 import AppSidebar from '@/components/common/AppSidebar';
 import { Toaster } from '@/components/ui/toaster';
+import { ThemeProvider } from '@/context/ThemeContext';
 
 export const metadata: Metadata = {
   title: 'YouTube',
@@ -26,16 +27,18 @@ export default function RootLayout({
         />
       </head>
       <body className="font-body antialiased">
-        <SidebarProvider>
-          <Sidebar collapsible="icon">
-            <AppSidebar />
-          </Sidebar>
-          <SidebarInset>
-            <AppHeader />
-            {children}
-          </SidebarInset>
-        </SidebarProvider>
-        <Toaster />
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <SidebarProvider>
+            <Sidebar collapsible="icon">
+              <AppSidebar />
+            </Sidebar>
+            <SidebarInset>
+              <AppHeader />
+              {children}
+            </SidebarInset>
+          </SidebarProvider>
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -10,7 +10,7 @@ import {
   SidebarSeparator,
 } from '@/components/ui/sidebar';
 import AppLogo from './AppLogo';
-import { Home, History, Youtube, Clapperboard, Flame, Library, PlaySquare } from 'lucide-react';
+import { Home, History, Youtube, Clapperboard, Flame, Library, PlaySquare, Settings } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { channels } from '@/lib/data';
@@ -25,6 +25,7 @@ const mainNav = [
 const libraryNav = [
   { href: '/history', icon: History, label: 'History' },
   { href: '/my-videos', icon: PlaySquare, label: 'Your Videos' },
+  { href: '/settings', icon: Settings, label: 'Settings' },
 ];
 
 export default function AppSidebar() {
